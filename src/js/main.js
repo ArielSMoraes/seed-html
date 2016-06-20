@@ -21,4 +21,6 @@ var APP = {
     }
 };
 
-window.$( document ).ready( initializer.init(APP) );
+document.addEventListener("DOMContentLoaded", function(event) {
+  initializer.init(CIELO)
+});
