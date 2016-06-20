@@ -1,0 +1,36 @@
+{
+  "name": "seed-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --use_strict app.js",
+    "build-js": "browserify src/js/main.js -o assets/js/main.js",
+    "build-min-js": "browserify src/js/main.js | uglifyjs -o assets/js/main.min.js",
+    "build-sass": "node-sass src/css/main.scss assets/css/main.css ",
+    "build-min-sass": "node-sass src/css/main.scss | cleancss -o assets/css/main.min.css",
+    "watch-js": "nodemon -e js -w src/js -x npm run build-js",
+    "watch-sass": "nodemon -e scss -w src/css -x npm run build-sass",
+    "build": "npm run build-js && npm run build-min-js && npm run build-sass && npm run build-min-sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArielSMoraes/seed-html.git"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "clean-css": "^3.4.12",
+    "node-sass": "^3.7.0",
+    "nodemon": "^1.9.2",
+    "uglify": "^0.1.5"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArielSMoraes/seed-html/issues"
+  },
+  "homepage": "https://github.com/ArielSMoraes/seed-html#readme"
+}
